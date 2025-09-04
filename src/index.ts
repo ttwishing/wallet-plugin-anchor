@@ -297,28 +297,28 @@ export class WalletPluginAnchor extends AbstractWalletPlugin {
 
         // Tell Wharf we need to prompt the user with a QR code and a button
         const promptPromise: Cancelable<PromptResponse> = context.ui.prompt({
-            title: t('transact.title', {default: 'Complete using Anchor'}),
+            title: t('transact.title', {default: 'Complete using Anchor-default'}),
             body: t('transact.body', {
                 channelName: this.data.channelName,
-                default: `Please open your Anchor Wallet on "${this.data.channelName}" to review and approve this transaction.`,
+                default: `Please open your Anchor Wallet on "${this.data.channelName}" to review and approve this transaction.-default`,
             }),
             elements: [
                 {
                     type: 'countdown',
                     data: {
-                        label: t('transact.await', {default: 'Waiting for response from Anchor'}),
+                        label: t('transact.await', {default: 'Waiting for response from Anchor-default'}),
                         end: expiration.toISOString(),
                     },
                 },
                 {
                     type: 'button',
-                    label: t('transact.label', {default: 'Sign manually or with another device'}),
+                    label: t('transact.label', {default: 'Sign manually or with another device-default'}),
                     data: {
                         onClick: isSameDevice
                             ? () => (window.location.href = sameDeviceRequest.encode())
                             : signManually,
                         label: t('transact.label', {
-                            default: 'Sign manually or with another device',
+                            default: 'Sign manually or with another device-default',
                         }),
                     },
                 },
