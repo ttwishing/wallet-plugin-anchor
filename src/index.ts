@@ -64,7 +64,7 @@ export class WalletPluginAnchor extends AbstractWalletPlugin {
 
     constructor(options?: WalletPluginOptions) {
         super()
-
+        console.log("WalletPluginAnchor: ", JSON.stringify(this.translations))
         this.buoyUrl = options?.buoyUrl || 'https://cb.anchor.link'
         this.buoyWs = options?.buoyWs
     }
