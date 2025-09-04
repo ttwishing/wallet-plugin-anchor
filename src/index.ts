@@ -110,6 +110,7 @@ export class WalletPluginAnchor extends AbstractWalletPlugin {
     }
 
     async handleLogin(context: LoginContext): Promise<WalletPluginLoginResponse> {
+        console.log("....handleLogin");
         if (!context.ui) {
             throw new Error('No UI available')
         }
@@ -224,6 +225,7 @@ export class WalletPluginAnchor extends AbstractWalletPlugin {
         resolved: ResolvedSigningRequest,
         context: TransactContext
     ): Promise<WalletPluginSignResponse> {
+         console.log("....handleSigningRequest");
         if (!context.ui) {
             throw new Error('No UI available')
         }
